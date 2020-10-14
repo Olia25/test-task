@@ -9,6 +9,7 @@ const monthNames = ["January", "February", "March", "April", "May", "June", "Jul
 
 function App() {
     const [data, setData] = useState(null)
+    console.log(data)
 
     const fetchData = async () => {
         try {
@@ -40,6 +41,7 @@ function App() {
             {
                 monthNames.map((elem, index) => {
                     const users = data ? data.filter(({dob}) => new Date(dob).getMonth() === index) : []
+                    console.log("users:", users)
                     return (
                         <StyleMonth
                             key={elem}
